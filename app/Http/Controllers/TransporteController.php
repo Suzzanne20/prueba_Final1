@@ -25,15 +25,15 @@ class TransporteController extends Controller
 
         return redirect() -> route("transporte.index") -> with("success", "Agregado con exito!");
     }
-    public function show(Transporte $transporte){
+    public function show($id){
         //Servirá para obtener un registro de nuestra tabla
-        return view('eliminar');
+        $transporte = Transporte::find($id);
+        return view('eliminar', compact('transporte'));
     }
-    public function edit(Transporte $transporte){
+    public function edit($id){
         //Este metodo nos sirve para traer los datos que se vna a editar y
         //los coloca en un formulario.
         $transporte = Transporte::find($id);
-
         return view('actualizar', compact('transporte'));
     }
     public function update(Request $request, $id){
@@ -45,7 +45,10 @@ class TransporteController extends Controller
 
         return redirect() -> route("transporte.index") -> with("success", "Actualizado con exito!");
     }
-    public function destroy(Transporte $transporte){
+    public function destroy($id){
         //Elimina un registro
+        $transporte = Transporte::find($id);
+        $transporte->delete();
+        return redirect()->route("transporte.index")->with("success", "Eliminado con exito!")
     }
 }

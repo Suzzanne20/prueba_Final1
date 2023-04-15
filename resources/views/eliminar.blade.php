@@ -17,14 +17,16 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{$transporte->id}}</td>
+                        <td>{{$transporte->nombre}}</td>
+                        <td>{{$transporte->razon_social}}</td>
                     </tr>
                     </tbody>
                 </table>
                 <hr>
-                <form action="">
+                <form action="{{route('$transporte.destroy', $transporte->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
                     <a href="{{route('transporte.index')}}" class="btn btn-sm btn-secondary">
                         <span class="bi bi-arrow-return-left"></span>  Regresar
                     </a>

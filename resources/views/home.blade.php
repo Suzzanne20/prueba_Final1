@@ -48,7 +48,7 @@
                                         </form>
                                     </td>
                                     <td>
-                                        <form action="">
+                                        <form action="{{route("transporte.show",$item->id)}}" method="GET">
                                             <button class="btn btn-danger btn-sm">
                                                 <span class="bi bi-trash3"></span>
                                             </button>

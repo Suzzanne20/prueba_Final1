@@ -11,4 +11,4 @@ Route::post('/store',[\App\Http\Controllers\TransporteController::class,'store']
 Route::get('/edit/{id}',[\App\Http\Controllers\TransporteController::class,'edit'])->name('transporte.edit');
 Route::put('/update/{id}',[\App\Http\Controllers\TransporteController::class,'update'])->name('transporte.update');
 Route::get('/show',[\App\Http\Controllers\TransporteController::class,'show'])->name('transporte.show');
-
+Route::delete('/destroy/{id}', [\App\Http\Controllers\TransporteController::class,'destroy'])->name('transporte.destroy');

@@ -41,7 +41,7 @@
                                     <td>{{$item->nombre}}</td>
                                     <td>{{$item->razon_social}}</td>
                                     <td>
-                                        <form action="">
+                                        <form action="{{route("transporte.edit",$item->id)}}" method="GET">
                                             <button class="btn btn-warning btn-sm">
                                                 <span class="bi bi-pencil-square"></span>
                                             </button>

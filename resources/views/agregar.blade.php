@@ -11,7 +11,7 @@
                 <form action="{{route('transporte.store')}}" method="POST">
                     @csrf
                     <label for="">Nombre</label>
-                    <input type="text" name="nombre" class="form-control" required>
+                    <input type="text" name="nombre" class="form-control">
                     <label for="">Razón social</label>
                     <input type="text" name="razon_social" class="form-control" required>
                     <br>

@@ -32,10 +32,18 @@ class TransporteController extends Controller
     public function edit(Transporte $transporte){
         //Este metodo nos sirve para traer los datos que se vna a editar y
         //los coloca en un formulario.
-        return view('actualizar');
+        $transporte = Transporte::find($id);
+
+        return view('actualizar', compact('transporte'));
     }
-    public function update(Request $request, Transporte $transporte){
+    public function update(Request $request, $id){
         //Este método actualiza los datos en la bd
+        $transporte = Transporte::find($id);
+        $transporte -> nombre = $request->post('nombre');
+        $transporte -> razon_social = $request->post('razon_social');
+        $transporte -> save();
+
+        return redirect() -> route("transporte.index") -> with("success", "Actualizado con exito!");
     }
     public function destroy(Transporte $transporte){
         //Elimina un registro

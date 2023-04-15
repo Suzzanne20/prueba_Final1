@@ -21,6 +21,7 @@ class TransporteController extends Controller
     }
     public function show(Transporte $transporte){
         //Servirá para obtener un registro de nuestra tabla
+        return view('eliminar');
     }
     public function edit(Transporte $transporte){
         //Este metodo nos sirve para traer los datos que se vna a editar y

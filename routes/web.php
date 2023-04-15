@@ -8,4 +8,5 @@ Route::get('/', function () {
 Route::get('/',[\App\Http\Controllers\TransporteController::class,'index'])->name('transporte.index');
 Route::get('/create',[\App\Http\Controllers\TransporteController::class,'create'])->name('transporte.create');
 Route::get('/edit',[\App\Http\Controllers\TransporteController::class,'edit'])->name('transporte.edit');
+Route::get('/show',[\App\Http\Controllers\TransporteController::class,'show'])->name('transporte.show');
 

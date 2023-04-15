@@ -9,7 +9,9 @@
             <h3 class="card-header">Listado de transportes</h3>
             <div class="card-body">
                 <p>
-                    <a href="{{ route("transporte.create") }}" class="btn btn-primary btn-sm mr-2 mb-2">Agregar nuevo registro</a>
+                    <a href="{{ route("transporte.create") }}" class="btn btn-primary btn-sm mr-2 mb-2">
+                        <span class="bi bi-patch-plus"></span>     Agregar nuevo
+                    </a>
                 </p>
                 <hr>
                 <p class="card-text">
@@ -28,8 +30,20 @@
                                     <td>{{$item->id}}</td>
                                     <td>{{$item->nombre}}</td>
                                     <td>{{$item->razon_social}}</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>
+                                        <form action="">
+                                            <button class="btn btn-warning btn-sm">
+                                                <span class="bi bi-pencil-square"></span>
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="">
+                                            <button class="btn btn-danger btn-sm">
+                                                <span class="bi bi-trash3"></span>
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

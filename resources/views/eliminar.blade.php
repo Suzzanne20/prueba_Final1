@@ -25,8 +25,12 @@
                 </table>
                 <hr>
                 <form action="">
-                    <a href="{{route('transporte.index')}}" class="btn btn-sm btn-secondary">Regresar</a>
-                    <button class="btn btn-sm btn-danger">Eliminar</button>
+                    <a href="{{route('transporte.index')}}" class="btn btn-sm btn-secondary">
+                        <span class="bi bi-arrow-return-left"></span>  Regresar
+                    </a>
+                    <button class="btn btn-sm btn-danger">
+                        <span class="bi bi-trash3"></span>  Eliminar
+                    </button>
                 </form>
             </div>
             </p>

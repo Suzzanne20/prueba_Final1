@@ -14,8 +14,12 @@
                 <label for="">Razón social</label>
                 <input type="text" name="razon_social" class="form-control" required>
                 <br>
-                <a href="{{route("transporte.index")}}" class="btn btn-secondary btn-sm">Regresar</a>
-                <button class="btn btn-primary btn-sm">Agregar</button>
+                <a href="{{route("transporte.index")}}" class="btn btn-secondary btn-sm">
+                    <span class="bi bi-arrow-return-left"></span>  Regresar
+                </a>
+                <button class="btn btn-primary btn-sm">
+                    <span class="bi bi-plus-circle"></span>  Agregar
+                </button>
             </form>
             </p>
         </div>

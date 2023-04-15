@@ -18,6 +18,12 @@ class TransporteController extends Controller
     }
     public function store(Request $request){
         //Sirve para guardar datos en la base de datos
+        $transporte = new Transporte(); //creamos un objeto del modelo (clase)
+        $transporte -> nombre = $request->post('nombre');
+        $transporte -> razon_social = $request->post('razon_social');
+        $transporte -> save();
+
+        return redirect() -> route("transporte.index") -> with("success", "Agregado con exito!");
     }
     public function show(Transporte $transporte){
         //Servirá para obtener un registro de nuestra tabla

@@ -9,7 +9,7 @@ class TransporteController extends Controller
 {
     public function index(){
         //Pagina de inicio
-        $datos = Transporte::all(); //Transporte=> Modelo
+        $datos = Transporte::orderBy('nombre','desc')->paginate(10); //Transporte=> Modelo
         return view('home', compact('datos'));//datos es un parametro que contiene todo lo de transporte
     }
     public function create(){
@@ -49,6 +49,6 @@ class TransporteController extends Controller
         //Elimina un registro
         $transporte = Transporte::find($id);
         $transporte->delete();
-        return redirect()->route("transporte.index")->with("success", "Eliminado con exito!")
+        return redirect()->route("transporte.index")->with("success", "Eliminado con exito!");
     }
 }

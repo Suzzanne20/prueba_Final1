@@ -13,7 +13,7 @@
                     <label for="">Nombre</label>
                     <input type="text" name="nombre" class="form-control">
                     <label for="">Razón social</label>
-                    <input type="text" name="razon_social" class="form-control" required>
+                    <input type="text" name="razon_social" class="form-control">
                     <br>
                     <a href="{{route("transporte.index")}}" class="btn btn-secondary btn-sm">
                         <span class="bi bi-arrow-return-left"></span>  Regresar

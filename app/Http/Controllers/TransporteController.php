@@ -9,8 +9,8 @@ class TransporteController extends Controller
 {
     public function index(){
         //Pagina de inicio
-        $datos = Transporte::orderBy('nombre','desc')->paginate(10); //Transporte=> Modelo
-        return view('home', compact('datos'));//datos es un parametro que contiene todo lo de transporte
+        $datos = Transporte::orderBy('id','asc')->paginate(25); //Transporte=> Modelo
+        return view('transporte', compact('datos'));//datos es un parametro que contiene los datos de transporte
     }
     public function create(){
         //el formulario donde agregamos los datos

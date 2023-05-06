@@ -4,68 +4,30 @@
 @section('Laravel', 'Crud con Laravel')
 
 @section('content')
-    <div class="container-fluid my-5">
-        <div class="card">
-            <h3 class="card-header">CRUD con Laravel y MySQL</h3>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-sm-12">
-                        @if($mensaje = Session::get('success'))
-                        <div class="alert alert-success" role="alert">
-                            {{$mensaje}}
-                        </div>
-                        @endif
-                    </div>
+    <div class="jumbotron">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Listado de Transporte</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <a href="{{route('transporte.index')}}" class="btn btn-primary">Ir</a>
                 </div>
-                <h5 class="card-tittle text-center">Listado de transportes</h5>
-                <p>
-                    <a href="{{ route("transporte.create") }}" class="btn btn-primary btn-sm mr-2 mb-2">
-                        <span class="bi bi-patch-plus"></span>     Agregar nuevo
-                    </a>
-                </p>
-                <hr>
-                <p class="card-text">
-                    <div class="table table-responsive">
-                        <table class="table table-sm table-bordered">
-                            <thead>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Razón social</th>
-                                <th>Editar</th>
-                                <th>Eliminar</th>
-                            </thead>
-                            <tbody>
-                            @foreach($datos as $item)
-                                <tr>
-                                    <td>{{$item->id}}</td>
-                                    <td>{{$item->nombre}}</td>
-                                    <td>{{$item->razon_social}}</td>
-                                    <td>
-                                        <form action="{{route("transporte.edit",$item->id)}}" method="GET">
-                                            <button class="btn btn-warning btn-sm">
-                                                <span class="bi bi-pencil-square"></span>
-                                            </button>
-                                        </form>
-                                    </td>
-                                    <td>
-                                        <form action="{{route("transporte.show",$item->id)}}" method="GET">
-                                            <button class="btn btn-danger btn-sm">
-                                                <span class="bi bi-trash3"></span>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    <hr>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Listado de Camiones</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <a href="{{route('camion.index')}}" class="btn btn-primary">Ir</a>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        {{$datos->links()}}
-                    </div>
-                </div>
-                </p>
             </div>
         </div>
     </div>

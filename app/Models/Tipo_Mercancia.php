@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Transporte extends Model
+class Tipo_Mercancia extends Model
 {
-    public $table='transporte';
+    public $table='tipo_mercancia';
     use HasFactory;
 
-    public function camiones(){
-        return $this->hasMany('App\Models\Camion');
+    public  function mercancia(){
+        return $this->hasOne(Mercancia::class);
     }
 }

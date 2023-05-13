@@ -14,7 +14,7 @@ class CreateTipoMercanciaTable extends Migration
     public function up()
     {
         Schema::create('tipo_mercancia', function (Blueprint $table) {
-            $table->increments('ID');
+            $table->id();
             $table->string('descripcion',25);
             $table->timestamps();
         });

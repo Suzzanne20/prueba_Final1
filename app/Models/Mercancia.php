@@ -10,7 +10,9 @@ class Mercancia extends Model
     public $table='mercancia';
     use HasFactory;
 
-    public  function mercancia(){
-        return $this->hasOne('App\Mercancia');
+    public  function tipo_mercancia(){
+
+        $tipo_mercancia= Tipo_Mercancia::find($this->id_tipo_mercancia);
+        return $this->belongsTo(Tipo_Mercancia::class);
     }
 }

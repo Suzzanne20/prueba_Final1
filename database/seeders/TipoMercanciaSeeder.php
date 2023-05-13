@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class TipoMercaderiaSeeder extends Seeder
+class TipoMercanciaSeeder extends Seeder
 {
     /**
      * Run the database seeds.

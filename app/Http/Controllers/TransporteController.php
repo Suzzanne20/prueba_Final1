@@ -10,11 +10,11 @@ class TransporteController extends Controller
     public function index(){
         //Pagina de inicio
         $datos = Transporte::orderBy('id','asc')->paginate(25); //Transporte=> Modelo
-        return view('transporte', compact('datos'));//datos es un parametro que contiene los datos de transporte
+        return view('Transporte/transporte', compact('datos'));//datos es un parametro que contiene los datos de transporte
     }
     public function create(){
         //el formulario donde agregamos los datos
-        return view('agregar');
+        return view('Transporte/agregar');
     }
     public function store(Request $request){
         //Sirve para guardar datos en la base de datos
@@ -28,13 +28,13 @@ class TransporteController extends Controller
     public function show($id){
         //Servirá para obtener un registro de nuestra tabla
         $transporte = Transporte::find($id);
-        return view('eliminar', compact('transporte'));
+        return view('Transporte/eliminar', compact('transporte'));
     }
     public function edit($id){
         //Este metodo nos sirve para traer los datos que se vna a editar y
         //los coloca en un formulario.
         $transporte = Transporte::find($id);
-        return view('actualizar', compact('transporte'));
+        return view('Transporte/actualizar', compact('transporte'));
     }
     public function update(Request $request, $id){
         //Este método actualiza los datos en la bd

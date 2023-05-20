@@ -16,9 +16,9 @@
                         @endif
                     </div>
                 </div>
-                <h5 class="card-tittle text-center">Listado de transportes</h5>
+                <h3 class="card-tittle text-center">Listado de camiones</h3>
                 <p>
-                    <a href="{{ route("transporte.create") }}" class="btn btn-primary btn-sm mr-2 mb-2">
+                    <a href="{{ route("camion.create") }}" class="btn btn-primary btn-sm mr-2 mb-2">
                         <span class="bi bi-patch-plus"></span>     Agregar nuevo
                     </a>
                 </p>
@@ -28,8 +28,12 @@
                     <table class="table table-sm table-bordered">
                         <thead>
                         <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Razón social</th>
+                        <th>Placa camion</th>
+                        <th>Marca</th>
+                        <th>Color</th>
+                        <th>Modelo</th>
+                        <th>Capacidad toneladas</th>
+                        <th>Transporte</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
                         </thead>
@@ -37,17 +41,22 @@
                         @foreach($datos as $item)
                             <tr>
                                 <td>{{$item->id}}</td>
-                                <td>{{$item->nombre}}</td>
-                                <td>{{$item->razon_social}}</td>
+                                <td>{{$item->placa_camion}}</td>
+                                <td>{{$item->marca}}</td>
+                                <td>{{$item->color}}</td>
+                                <td>{{$item->modelo}}</td>
+                                <td>{{$item->capacidad_toneladas}}</td>
+                                <td>{{$item->transporte->nombre}}</td>
+
                                 <td>
-                                    <form action="{{route("transporte.edit",$item->id)}}" method="GET">
+                                    <form action="{{route("camion.edit",$item->id)}}" method="GET">
                                         <button class="btn btn-warning btn-sm">
                                             <span class="bi bi-pencil-square"></span>
                                         </button>
                                     </form>
                                 </td>
                                 <td>
-                                    <form action="{{route("transporte.show",$item->id)}}" method="GET">
+                                    <form action="{{route("camion.show",$item->id)}}" method="GET">
                                         <button class="btn btn-danger btn-sm">
                                             <span class="bi bi-trash3"></span>
                                         </button>

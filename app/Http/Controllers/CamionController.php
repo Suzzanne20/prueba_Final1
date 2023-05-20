@@ -10,11 +10,11 @@ class CamionController extends Controller
     public function index2(){
         //Pagina de inicio
         $datos = Camion::orderBy('id','asc')->paginate(25); //Camion=> Modelo
-        return view('camion', compact('datos'));//datos es un parametro que contiene datos de camiones
+        return view('Camion/camion', compact('datos'));//datos es un parametro que contiene datos de camiones
     }
     public function create2(){
         //el formulario donde agregamos los datos
-        return view('agregar2');
+        return view('Camion/agregar2');
     }
     public function store2(Request $request){
         //Sirve para guardar datos en la base de datos
@@ -31,13 +31,13 @@ class CamionController extends Controller
     public function show2($id){
         //Servirá para obtener un registro de nuestra tabla
         $camion = Camion::find($id);
-        return view('eliminar2', compact('camion'));
+        return view('Camion/eliminar2', compact('camion'));
     }
     public function edit2($id){
         //Este metodo nos sirve para traer los datos que se vna a editar y
         //los coloca en un formulario.
         $camion = Camion::find($id);
-        return view('actualizar2', compact('camion'));
+        return view('Camion/actualizar2', compact('camion'));
     }
     public function update2(Request $request, $id){
         //Este método actualiza los datos en la bd

@@ -5,27 +5,17 @@
 @section('content')
     <div class="container-fluid my-5">
         <div class="card">
-            <h3 class="card-header">CRUD con Laravel y MySQL</h3>
             <div class="card-body">
-                <div class="row">
-                    <div class="col-sm-12">
-                        @if($mensaje = Session::get('success'))
-                            <div class="alert alert-success" role="alert">
-                                {{$mensaje}}
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <h3 class="card-tittle text-center">Listado de transportes</h3>
-                <p>
-                    <a href="{{ route("transporte.create") }}" class="btn btn-primary btn-sm mr-2 mb-2 ">
-                        <span class="bi bi-patch-plus"></span>     Agregar nuevo
+                <h3 class="card-tittle text-center display-5">Listado de Transportistas</h3>
+                <div class="d-flex justify-content-end">
+                    <a href="{{ route("transporte.create") }}" class="btn btn-primary btn-sm mr-2 mb-1">
+                        Agregar nuevo
                     </a>
-                </p>
+                </div>
                 <hr>
                 <p class="card-text">
                 <div class="table table-responsive">
-                    <table class="table table-sm table-bordered">
+                    <table class="table">
                         <thead>
                         <th>ID</th>
                         <th>Nombre</th>
@@ -41,14 +31,14 @@
                                 <td>{{$item->razon_social}}</td>
                                 <td>
                                     <form action="{{route("transporte.edit",$item->id)}}" method="GET">
-                                        <button class="btn btn-warning btn-sm">
+                                        <button class="btn btn-outline-info btn-sm" onclick="editar()">
                                             <span class="bi bi-pencil-square"></span>
                                         </button>
                                     </form>
                                 </td>
                                 <td>
                                     <form action="{{route("transporte.show",$item->id)}}" method="GET">
-                                        <button class="btn btn-danger btn-sm">
+                                        <button class="btn btn-outline-dark btn-sm">
                                             <span class="bi bi-trash3"></span>
                                         </button>
                                     </form>

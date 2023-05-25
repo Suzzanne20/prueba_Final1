@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('home');
 });
 
@@ -25,7 +25,7 @@ Route::get('/show2/{id}',[\App\Http\Controllers\CamionController::class,'show2']
 Route::delete('/destroy2/{id}', [\App\Http\Controllers\CamionController::class,'destroy2'])->name('camion.destroy');
 
 //Nuevas rutas
-Route::post('/crear',[\App\Http\Controllers\CamionController::class,'store2'])->name('camion.crear');
+Route::post('/crear',[\App\Http\Controllers\CamionController::class,'create2'])->name('camion.crear');
 Route::get('/registrar',[\App\Http\Controllers\CamionController::class,'store2'])->name('camion.registrar');
 Route::post('/editar/{id}',[\App\Http\Controllers\CamionController::class,'edit2'])->name('camion.editar');
 Route::get('/lista',[\App\Http\Controllers\CamionController::class,'index2'])->name('ruta');
@@ -33,5 +33,5 @@ Route::get('/eliminar/{id}', [\App\Http\Controllers\CamionController::class,'des
 Route::get('/delete', [\App\Http\Controllers\CamionController::class,'destroy2'])->name('camion.eliminar');
 
 Route::get('/error404', function(){
-    return view('Errors/404');
+    return view('404');
 });

@@ -1,11 +1,12 @@
 @extends('layout')
 
 @section('content')
-    <h3>Error 404: pagina no encontrada</h3>
-    <img style="float: left;
+    <div class="text-center mx-5 my-5">
+    <h3 class="display-4 mx-5 my-3">Error 404: página no encontrada</h3>
+    <img style=";
     margin: 0 auto;
     max-width: 60%;
-    width: 40%;"
-         src="https://static.vecteezy.com/system/resources/previews/004/449/855/large_2x/lost-in-forest-flat-color-illustration-survivor-with-backpack-panic-and-thinking-of-map-camper-question-location-confused-man-2d-cartoon-character-with-winter-hills-with-trees-on-background-vector.jpg"><br>
-
+    width: 40%;" class="rounded"
+         src="https://img.freepik.com/vector-gratis/ilustracion-concepto-uy-error-404-robot-roto_114360-1920.jpg?w=2000" alt="...">
+    </div>
 @endsection

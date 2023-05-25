@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Transporte;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TransporteController extends Controller
 {
     public function index(){
         //Pagina de inicio
-        $datos = Transporte::orderBy('id','asc')->paginate(25); //Transporte=> Modelo
+        $datos = Transporte::orderBy('id','asc')->paginate(10); //Transporte=> Modelo
         return view('Transporte/transporte', compact('datos'));//datos es un parametro que contiene los datos de transporte
     }
     public function create(){
@@ -22,8 +23,8 @@ class TransporteController extends Controller
         $transporte -> nombre = $request->post('nombre');
         $transporte -> razon_social = $request->post('razon_social');
         $transporte -> save();
-
-        return redirect() -> route("transporte.index") -> with("success", "Agregado con exito!");
+        Alert::toast('Registrado', 'success');
+        return redirect() -> route("transporte.index");
     }
     public function show($id){
         //Servirá para obtener un registro de nuestra tabla
@@ -42,13 +43,16 @@ class TransporteController extends Controller
         $transporte -> nombre = $request->post('nombre');
         $transporte -> razon_social = $request->post('razon_social');
         $transporte -> save();
+        Alert::toast('Actualizado!', 'info');
 
-        return redirect() -> route("transporte.index") -> with("success", "Actualizado con exito!");
+        return redirect() -> route("transporte.index");
     }
     public function destroy($id){
         //Elimina un registro
         $transporte = Transporte::find($id);
         $transporte->delete();
-        return redirect()->route("transporte.index")->with("success", "Eliminado con exito!");
+        Alert::toast('Eliminado con éxito', 'error');
+
+        return redirect()->route("transporte.index");
     }
 }

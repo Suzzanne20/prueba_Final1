@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Camion;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CamionController extends Controller
 {
     public function index2(){
         //Pagina de inicio
-        $datos = Camion::orderBy('id','asc')->paginate(25); //Camion=> Modelo
+        $datos = Camion::orderBy('id','asc')->paginate(10); //Camion=> Modelo
         return view('Camion/camion', compact('datos'));//datos es un parametro que contiene datos de camiones
     }
     public function create2(){
@@ -25,8 +26,8 @@ class CamionController extends Controller
         $camion -> modelo = $request->post('modelo');
         $camion -> capacidad_toneladas = $request->post('capacidad_toneladas');
         $camion -> save();
-
-        return redirect() -> route("camion.index") -> with("success", "Agregado con exito!");
+        Alert::toast('Registrado', 'success');
+        return redirect() -> route("camion.index");
     }
     public function show2($id){
         //Servirá para obtener un registro de nuestra tabla
@@ -48,13 +49,16 @@ class CamionController extends Controller
         $camion -> modelo = $request->post('modelo');
         $camion -> capacidad_toneladas = $request->post('capacidad_toneladas');
         $camion -> save();
+        Alert::toast('Actualizado!', 'info');
 
-        return redirect() -> route("camion.index") -> with("success", "Actualizado con exito!");
+        return redirect() -> route("camion.index");
     }
     public function destroy2($id){
         //Elimina un registro
         $camion = Camion::find($id);
         $camion->delete();
-        return redirect()->route("camion.index")->with("success", "Eliminado con exito!");
+        Alert::toast('Eliminado con éxito', 'error');
+
+        return redirect()->route("camion.index");
     }
 }

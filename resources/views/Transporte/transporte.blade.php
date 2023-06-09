@@ -1,8 +1,9 @@
 @extends('layout')
-
 @section('Laravel', 'Crud con Laravel')
-
 @section('content')
+
+<!-- UPDATE 08/06/23 00:02 -->
+
     <div class="container-fluid my-5">
         <div class="card">
             <div class="card-body">
